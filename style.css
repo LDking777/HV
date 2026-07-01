@@ -23,16 +23,41 @@ img {
     border: 4px solid rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Barras de Progreso */
+/* Lista de Habilidades con íconos */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 0;
+}
+
+.skills-list li {
+    width: 50%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+}
+
+.skills-list li i {
+    font-size: 14px;
+    width: auto;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Barras de Progreso (ya no se usan, se mantienen por compatibilidad) */
 .progress {
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     height: 8px !important;
     overflow: hidden;
 }
 
 .progress-bar {
-    background-color: #fff !important; /* Color de la carga */
+    background-color: #fff !important;
 }
 
 /* Tarjetas y Secciones */
@@ -67,4 +92,211 @@ img {
 i {
     width: 20px;
     text-align: center;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    #pdf-content {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: none !important;
+    }
+
+    #pdf-content .row {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: stretch !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        overflow: hidden !important;
+    }
+
+    /* Neutralize Bootstrap row negative margins */
+    #pdf-content .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #pdf-content .col-md-4 {
+        width: 30% !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+        padding: 20pt 16pt !important;
+        background-color: #484848 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        flex-shrink: 0 !important;
+    }
+
+    #pdf-content .col-md-8 {
+        width: 70% !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+        padding: 20pt 22pt !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        flex-shrink: 0 !important;
+    }
+
+    #pdf-content img {
+        width: 115pt !important;
+        height: 115pt !important;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3pt solid rgba(255, 255, 255, 0.3) !important;
+    }
+
+    #pdf-content h1 {
+        font-size: 17pt;
+        margin: 0 0 4pt;
+    }
+
+    #pdf-content h2,
+    #pdf-content .h5 {
+        font-size: 11pt;
+        margin: 0;
+    }
+
+    #pdf-content h4 {
+        font-size: 11pt;
+        margin: 0 0 4pt;
+    }
+
+    #pdf-content h5 {
+        font-size: 9.5pt;
+        margin: 0 0 3pt;
+    }
+
+    #pdf-content h6 {
+        font-size: 8.5pt;
+        margin: 0 0 4pt;
+    }
+
+    #pdf-content p,
+    #pdf-content li {
+        font-size: 8.5pt;
+        line-height: 1.45;
+    }
+
+    #pdf-content .card {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    #pdf-content .card-body {
+        padding: 0 !important;
+    }
+
+    #pdf-content section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    #pdf-content header {
+        margin-bottom: 12pt !important;
+    }
+
+    #pdf-content .mb-4,
+    #pdf-content .mb-5 {
+        margin-bottom: 10pt !important;
+    }
+
+    #pdf-content .mb-3 {
+        margin-bottom: 6pt !important;
+    }
+
+    #pdf-content .my-4 {
+        margin-top: 4pt !important;
+        margin-bottom: 4pt !important;
+    }
+
+    #pdf-content .mb-2 {
+        margin-bottom: 3pt !important;
+    }
+
+    /* Remove all shadows and rounded corners */
+    #pdf-content .shadow-lg,
+    #pdf-content .shadow-sm,
+    #pdf-content .shadow-sw,
+    #pdf-content .rounded-4,
+    #pdf-content .rounded-circle {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    /* Keep circular photo */
+    #pdf-content .rounded-circle {
+        border-radius: 50% !important;
+    }
+
+    #pdf-content .skills-list {
+        gap: 3pt 0;
+    }
+
+    #pdf-content .skills-list li {
+        width: 50%;
+        font-size: 8pt;
+        gap: 3pt;
+    }
+
+    #pdf-content .skills-list li i {
+        font-size: 8.5pt;
+    }
+
+    #pdf-content .text-muted {
+        font-size: 7.5pt !important;
+    }
+
+    #pdf-content i {
+        font-size: 8.5pt;
+        width: 14pt;
+    }
+
+    #pdf-content .list-unstyled li {
+        margin-bottom: 3pt !important;
+    }
+
+    #pdf-content ul {
+        margin-bottom: 4pt !important;
+    }
+
+    #pdf-content .text-center.mb-4 {
+        margin-bottom: 10pt !important;
+    }
 }
