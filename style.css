@@ -34,7 +34,7 @@ img {
 }
 
 .skills-list li {
-    width: 50%;
+    width: 100%;
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -94,209 +94,210 @@ i {
     text-align: center;
 }
 
-/* ===== PRINT STYLES ===== */
+/* ===== PRINT STYLES (PDF) =====
+   Decisiones respaldadas por evidencia:
+   - Una sola columna: los diseños de varias columnas pueden desordenar el
+     orden de lectura en algunos sistemas ATS (Workday, Taleo) y el estudio
+     de Ladders (2018) asoció varias columnas y poco espacio en blanco con
+     hojas de vida peor evaluadas.
+   - Sin altura fija ni overflow oculto: el contenido nunca se recorta;
+     si no cabe en una página, continúa en la siguiente.
+   - Iconos ocultos: las fuentes de iconos se extraen como caracteres
+     extraños al leer el texto del PDF.
+   - Texto oscuro sobre fondo blanco: máximo contraste y legibilidad. */
 @media print {
     @page {
         size: A4;
-        margin: 0;
-    }
-
-    * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-        color-adjust: exact !important;
-    }
-
-    .no-print {
-        display: none !important;
+        margin: 14mm 16mm;
     }
 
     html, body {
-        width: 210mm;
-        height: 297mm;
         margin: 0 !important;
         padding: 0 !important;
         background: #fff !important;
+        color: #222 !important;
+    }
+
+    .no-print,
+    #pdf-content i {
+        display: none !important;
     }
 
     #pdf-content {
-        width: 210mm;
-        height: 297mm;
+        max-width: none !important;
+        width: auto !important;
         margin: 0 !important;
         padding: 0 !important;
-        max-width: none !important;
     }
 
     #pdf-content .row {
-        width: 210mm;
-        height: 297mm;
+        display: block !important;
         margin: 0 !important;
-        display: flex !important;
-        align-items: stretch !important;
         box-shadow: none !important;
         border-radius: 0 !important;
-        overflow: hidden !important;
+        overflow: visible !important;
     }
 
-    /* Neutralize Bootstrap row negative margins */
-    #pdf-content .row {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    #pdf-content .col-md-4 {
-        width: 30% !important;
-        height: 297mm !important;
-        min-height: 297mm !important;
-        max-height: 297mm !important;
-        overflow: hidden !important;
-        padding: 20pt 16pt !important;
-        background-color: #484848 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        flex-shrink: 0 !important;
-    }
-
+    #pdf-content .col-md-4,
     #pdf-content .col-md-8 {
-        width: 70% !important;
-        height: 297mm !important;
-        min-height: 297mm !important;
-        max-height: 297mm !important;
-        overflow: hidden !important;
-        padding: 20pt 22pt !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        flex-shrink: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #222 !important;
+        box-shadow: none !important;
     }
 
-    #pdf-content img {
-        width: 115pt !important;
-        height: 115pt !important;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3pt solid rgba(255, 255, 255, 0.3) !important;
+    #pdf-content .text-white,
+    #pdf-content a {
+        color: #222 !important;
+        text-decoration: none !important;
+    }
+
+    /* Encabezado: foto pequeña, nombre y título */
+    #pdf-content header {
+        display: grid !important;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        align-items: center;
+        column-gap: 14pt;
+        text-align: left !important;
+        margin-bottom: 6pt !important;
+    }
+
+    #pdf-content header img {
+        grid-row: 1 / span 2;
+        align-self: center;
+        width: 64pt !important;
+        height: 64pt !important;
+        margin: 0 !important;
+        border: none !important;
+        border-radius: 50% !important;
     }
 
     #pdf-content h1 {
-        font-size: 17pt;
-        margin: 0 0 4pt;
+        font-size: 18pt;
+        align-self: end;
+        margin: 0 0 2pt !important;
+        color: #222;
     }
 
-    #pdf-content h2,
-    #pdf-content .h5 {
+    #pdf-content header h2 {
+        align-self: start;
         font-size: 11pt;
+        font-weight: 600;
         margin: 0;
+        color: #2c3e50;
     }
 
-    #pdf-content h4 {
+    /* Títulos de sección: mismo estilo en ambas columnas */
+    #pdf-content section > h4,
+    #pdf-content .col-md-4 section > h5 {
         font-size: 11pt;
-        margin: 0 0 4pt;
+        font-weight: 700;
+        color: #2c3e50 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+        border-bottom: 1pt solid #2c3e50;
+        padding-bottom: 2pt;
+        margin: 9pt 0 5pt !important;
+        break-after: avoid;
+        page-break-after: avoid;
     }
 
-    #pdf-content h5 {
-        font-size: 9.5pt;
-        margin: 0 0 3pt;
+    /* Contacto en una sola línea */
+    #pdf-content .col-md-4 section:first-of-type > h5 {
+        display: none;
     }
 
-    #pdf-content h6 {
-        font-size: 8.5pt;
-        margin: 0 0 4pt;
+    #pdf-content .col-md-4 .list-unstyled {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 14pt;
+        margin: 0 !important;
     }
 
-    #pdf-content p,
-    #pdf-content li {
-        font-size: 8.5pt;
-        line-height: 1.45;
+    #pdf-content .col-md-4 .list-unstyled li {
+        margin: 0 !important;
+        font-size: 9pt;
     }
 
+    /* Habilidades: grupos en línea */
+    #pdf-content .col-md-4 h6 {
+        font-size: 9pt;
+        font-weight: 700;
+        margin: 3pt 0 1pt !important;
+    }
+
+    #pdf-content .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    #pdf-content .skills-list li {
+        width: auto !important;
+        display: inline !important;
+        font-size: 9pt;
+        color: #222 !important;
+    }
+
+    #pdf-content .skills-list li:not(:last-child)::after {
+        content: "\00a0·\00a0";
+    }
+
+    /* Tarjetas de experiencia */
     #pdf-content .card {
         border: none !important;
         box-shadow: none !important;
         background: transparent !important;
-        page-break-inside: avoid;
+        transform: none !important;
+        margin-bottom: 6pt !important;
         break-inside: avoid;
+        page-break-inside: avoid;
     }
 
     #pdf-content .card-body {
         padding: 0 !important;
     }
 
-    #pdf-content section {
-        page-break-inside: avoid;
-        break-inside: avoid;
+    #pdf-content .card-title {
+        font-size: 10.5pt;
+        font-weight: 700;
+        margin: 0 0 1pt !important;
+        color: #222;
     }
 
-    #pdf-content header {
-        margin-bottom: 12pt !important;
+    #pdf-content .card-subtitle {
+        font-size: 9pt !important;
+        margin: 0 0 1pt !important;
+        color: #555 !important;
+    }
+
+    #pdf-content .card h6 {
+        font-size: 9pt;
+        margin: 0 0 2pt !important;
+        color: #2c3e50 !important;
+    }
+
+    #pdf-content p,
+    #pdf-content li {
+        font-size: 9.5pt;
+        line-height: 1.4;
+    }
+
+    #pdf-content p {
+        margin: 0;
+    }
+
+    #pdf-content .card ul.my-4 {
+        margin: 2pt 0 0 !important;
+        padding-left: 14pt;
     }
 
     #pdf-content .mb-4,
-    #pdf-content .mb-5 {
-        margin-bottom: 10pt !important;
-    }
-
-    #pdf-content .mb-3 {
-        margin-bottom: 6pt !important;
-    }
-
-    #pdf-content .my-4 {
-        margin-top: 4pt !important;
+    #pdf-content .mb-5,
+    #pdf-content header.mb-4 {
         margin-bottom: 4pt !important;
-    }
-
-    #pdf-content .mb-2 {
-        margin-bottom: 3pt !important;
-    }
-
-    /* Remove all shadows and rounded corners */
-    #pdf-content .shadow-lg,
-    #pdf-content .shadow-sm,
-    #pdf-content .shadow-sw,
-    #pdf-content .rounded-4,
-    #pdf-content .rounded-circle {
-        box-shadow: none !important;
-        border-radius: 0 !important;
-    }
-
-    /* Keep circular photo */
-    #pdf-content .rounded-circle {
-        border-radius: 50% !important;
-    }
-
-    #pdf-content .skills-list {
-        gap: 3pt 0;
-    }
-
-    #pdf-content .skills-list li {
-        width: 50%;
-        font-size: 8pt;
-        gap: 3pt;
-    }
-
-    #pdf-content .skills-list li i {
-        font-size: 8.5pt;
-    }
-
-    #pdf-content .text-muted {
-        font-size: 7.5pt !important;
-    }
-
-    #pdf-content i {
-        font-size: 8.5pt;
-        width: 14pt;
-    }
-
-    #pdf-content .list-unstyled li {
-        margin-bottom: 3pt !important;
-    }
-
-    #pdf-content ul {
-        margin-bottom: 4pt !important;
-    }
-
-    #pdf-content .text-center.mb-4 {
-        margin-bottom: 10pt !important;
     }
 }

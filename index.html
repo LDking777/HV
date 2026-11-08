@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hoja de Vida</title>
+    <title>Hoja de Vida – Jhoann Esteban Reyes Higuera</title>
     <!-- Bootstrap 5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -34,7 +34,7 @@
               alt="Foto Perfil"
             />
             <h1 class="fw-bold mb-2">Jhoann Esteban Reyes Higuera</h1>
-            <h2 class="h5">Desarrollador Web / Programador</h2>
+            <h2 class="h5">Desarrollador de Soluciones de IA y Automatización</h2>
           </header>
 
           <!-- Contacto -->
@@ -75,32 +75,35 @@
           </section>
 
           <!-- Habilidades -->
-          <section class="mb-4">
+          <section>
             <h5 class="fw-bold">
               <i class="fas fa-code me-2"></i> Habilidades
             </h5>
 
+            <h6 class="fw-bold mt-3">IA y automatización</h6>
             <ul class="skills-list">
-              <li><i class="fa-regular fa-circle-check"></i> HTML/CSS</li>
-              <li><i class="fa-regular fa-circle-check"></i> JavaScript</li>
-              <li><i class="fa-regular fa-circle-check"></i> Python</li>
+              <li><i class="fa-regular fa-circle-check"></i> Python (Flask)</li>
+              <li><i class="fa-regular fa-circle-check"></i> Whisper (voz a texto)</li>
+              <li><i class="fa-regular fa-circle-check"></i> LLMs locales con Ollama (Qwen)</li>
+              <li><i class="fa-regular fa-circle-check"></i> APIs de OpenAI y Gemini</li>
+              <li><i class="fa-regular fa-circle-check"></i> Bots de WhatsApp (Baileys) y Telegram</li>
+            </ul>
+
+            <h6 class="fw-bold mt-3">Desarrollo</h6>
+            <ul class="skills-list">
+              <li><i class="fa-regular fa-circle-check"></i> JavaScript / Node.js</li>
+              <li><i class="fa-regular fa-circle-check"></i> HTML / CSS / Bootstrap</li>
               <li><i class="fa-regular fa-circle-check"></i> Java</li>
-              <li><i class="fa-regular fa-circle-check"></i> Node.js</li>
-              <li><i class="fa-regular fa-circle-check"></i> PostgreSQL</li>
-              <li><i class="fa-regular fa-circle-check"></i> Git</li>
+              <li><i class="fa-regular fa-circle-check"></i> PostgreSQL / Supabase</li>
+            </ul>
+
+            <h6 class="fw-bold mt-3">Infraestructura y herramientas</h6>
+            <ul class="skills-list">
+              <li><i class="fa-regular fa-circle-check"></i> Microsoft Azure (máquinas virtuales)</li>
+              <li><i class="fa-regular fa-circle-check"></i> Git / GitHub</li>
             </ul>
           </section>
 
-          <!-- Idiomas -->
-          <section>
-            <h5 class="fw-bold">
-              <i class="fas fa-language me-2"></i> Idiomas
-            </h5>
-            <ul class="list-unstyled">
-              <li>Español - Nativo</li>
-              <li>Inglés - Intermedio (B1)</li>
-            </ul>
-          </section>
         </div>
 
         <!-- Columna derecha -->
@@ -113,35 +116,105 @@
             <div class="card mb-3 border-0 shadow-sm">
               <div class="card-body">
                 <p>
-                  Candidato a Ingeniero Informático en la Universidad de Caldas (Finalización 2026). Desarrollador con sólida base técnica en entornos Full-stack y arquitectura de software. Especializado en la creación de soluciones digitales eficientes utilizando JavaScript, Python y Java. Destacado por mi capacidad de prototipado rápido en competencias de alto rendimiento como la Hackathon 5.0 y enfocado en la entrega de código limpio y escalable.
+                  Ingeniero Informático en formación (Universidad de Caldas, finalización 2026) enfocado en IA aplicada y automatización. Desarrollo un prototipo de documentación clínica con IA ejecutada localmente para proteger la información de los pacientes. Segundo lugar en el reto de Inteligencia Artificial de la Hackathon Manizales 2026 (MinTIC). Fundador de DespachaBot, bot de pedidos por WhatsApp en piloto con un restaurante.
                 </p>
               </div>
             </div>
           </section>
 
-          <!-- Experiencia Laboral -->
+          <!-- Experiencia -->
           <section class="mb-5">
             <h4 class="fw-bold text-primary mb-4">
-              <i class="fas fa-briefcase me-2"></i> Experiencia Laboral
+              <i class="fas fa-briefcase me-2"></i> Experiencia
             </h4>
 
             <div class="card mb-3 border-0 shadow-sm">
               <div class="card-body">
                 <h4 class="card-title fw-bold">
-                  Desarrollador Full-Stack (Proyecto de Ingeniería)
+                  Practicante de Ingeniería – Módulo de IA para documentación clínica
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
+                  Ago 2026 – Actualidad
+                </h5>
+                <h6 class="text-primary">Universidad de Caldas | Área de Ingeniería de Telesalud</h6>
+                <ul class="my-4">
+                  <li>Desarrollo un prototipo que transcribe teleconsultas con Whisper y, a partir de la transcripción, genera un resumen para la historia clínica con un modelo de lenguaje (Qwen) servido localmente con Ollama.</li>
+                  <li>Diseñé una arquitectura de procesamiento 100% local para cumplir la restricción de no enviar información clínica a servicios de terceros.</li>
+                  <li>Reestructuré el módulo general de la plataforma de telemedicina para integrar el componente de IA.</li>
+                  <li>Elaboré un informe técnico de investigación (UX, IA en salud y tendencias en telemedicina) y una propuesta de accesibilidad visual para la plataforma.</li>
+                  <li>Estado: prototipo en desarrollo; próxima fase, pruebas con personal médico y de enfermería.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title fw-bold">
+                  Fundador y Desarrollador – DespachaBot
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
+                  2026 – Actualidad
+                </h5>
+                <h6 class="text-primary">Emprendimiento propio | Manizales</h6>
+                <ul class="my-4">
+                  <li>Desarrollé un bot de pedidos por WhatsApp para restaurantes de comida rápida, construido con Node.js y Baileys.</li>
+                  <li>Desplegué y administro el servicio en una máquina virtual de Microsoft Azure.</li>
+                  <li>Puse el sistema en piloto con un primer restaurante cliente.</li>
+                  <li>Definí el modelo de negocio como servicio por suscripción (instalación + mensualidad).</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Reconocimientos -->
+          <section class="mb-5">
+            <h4 class="fw-bold text-primary mb-4">
+              <i class="fas fa-trophy me-2"></i> Reconocimientos
+            </h4>
+
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title fw-bold">
+                  Segundo lugar – Reto de Inteligencia Artificial, Hackathon Manizales
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
+                  Mar 2026
+                </h5>
+                <h6 class="text-primary">Ministerio TIC – Talento Tech | Unión Temporal IU Training (Universidad de Antioquia, Universidad de Caldas y Ubicua Technology)</h6>
+                <ul class="my-4">
+                  <li>En equipo, desarrollamos NEXO IA: un asistente de analítica que interpreta métricas de comportamiento web (rage clicks, dead clicks, engagement) y responde en lenguaje natural.</li>
+                  <li>Backend en Python/Flask que consulta en paralelo GPT (OpenAI) y Gemini y devuelve la primera respuesta válida, con datos en vivo de Supabase incorporados al contexto del modelo.</li>
+                  <li>Entrada por voz con Whisper y canal adicional mediante un bot de Telegram.</li>
+                  <li>Código: <a href="https://github.com/LDking777/api-service-v2" target="_blank">github.com/LDking777/api-service-v2</a></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Proyectos -->
+          <section class="mb-5">
+            <h4 class="fw-bold text-primary mb-4">
+              <i class="fas fa-diagram-project me-2"></i> Proyectos académicos
+            </h4>
+
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title fw-bold">
+                  Sistema de gestión de usuarios (Full-Stack)
                 </h4>
                 <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
                   2025
                 </h5>
-                <h6 class="text-primary">Universidad de Caldas | Proyecto de Fin de Curso</h6>
+                <h6 class="text-primary">Universidad de Caldas | Proyecto de curso</h6>
                 <ul class="my-4">
-                  <li>Diseñé e implementé un sistema de gestión de usuarios robusto utilizando Node.js para el backend y PostgreSQL como base de datos relacional.</li>
-                  <li>Desarrollé interfaces web responsivas y dinámicas utilizando HTML5, CSS3 y el framework Bootstrap.</li>
-                  <li>Apliqué scripts en Java y Python enfocados en el análisis y procesamiento de datos del sistema.</li>
-                  <li>Gestioné el ciclo de vida del código y la colaboración del equipo utilizando Git y GitHub bajo buenas prácticas de control de versiones.</li>
+                  <li>Implementé el backend con Node.js y PostgreSQL como base de datos relacional.</li>
+                  <li>Desarrollé interfaces web responsivas con HTML5, CSS3 y Bootstrap.</li>
+                  <li>Apliqué scripts en Java y Python para el análisis y procesamiento de datos del sistema.</li>
+                  <li>Gestioné el control de versiones y la colaboración del equipo con Git y GitHub.</li>
                 </ul>
               </div>
             </div>
+
           </section>
 
           <!-- Educación -->
@@ -152,10 +225,10 @@
             <div class="card mb-3 border-0 shadow-sm">
               <div class="card-body">
                 <h4 class="card-title fw-bold">
-                  Ingeniería en Informática
+                  Ingeniería Informática
                 </h4>
                 <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
-                  2022 — 2026 (Último año)
+                  2022 – 2026
                 </h5>
                 <h6 class="text-primary">Universidad de Caldas</h6>
               </div>
@@ -173,6 +246,24 @@
               </div>
             </div>
 
+          </section>
+
+          <!-- Idiomas -->
+          <section class="mb-4">
+            <h4 class="fw-bold text-primary mb-4">
+              <i class="fas fa-language me-2"></i> Idiomas
+            </h4>
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                  <li>Español – Nativo</li>
+                  <li>Inglés – Intermedio (B1)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
             <div class="text-center no-print">
               <button onclick="downloadPDF()" class="btn btn-outline-primary px-4">
                 <i class="fa-solid fa-file-arrow-down me-2"></i> Descargar PDF
@@ -186,4 +277,4 @@
     <script src="scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-</html>
+</html>
