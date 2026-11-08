@@ -82,24 +82,29 @@
 
             <h6 class="fw-bold mt-3">IA y automatización</h6>
             <ul class="skills-list">
-              <li><i class="fa-regular fa-circle-check"></i> Python (Flask)</li>
+              <li><i class="fa-regular fa-circle-check"></i> Python (FastAPI, Flask)</li>
               <li><i class="fa-regular fa-circle-check"></i> Whisper (voz a texto)</li>
               <li><i class="fa-regular fa-circle-check"></i> LLMs locales con Ollama (Qwen)</li>
-              <li><i class="fa-regular fa-circle-check"></i> APIs de OpenAI y Gemini</li>
+              <li><i class="fa-regular fa-circle-check"></i> APIs de OpenAI, Gemini y Groq</li>
+              <li><i class="fa-regular fa-circle-check"></i> RAG con pgvector</li>
               <li><i class="fa-regular fa-circle-check"></i> Bots de WhatsApp (Baileys) y Telegram</li>
+              <li><i class="fa-regular fa-circle-check"></i> Desarrollo asistido por agentes de IA</li>
             </ul>
 
             <h6 class="fw-bold mt-3">Desarrollo</h6>
             <ul class="skills-list">
               <li><i class="fa-regular fa-circle-check"></i> JavaScript / Node.js</li>
+              <li><i class="fa-regular fa-circle-check"></i> React + Vite</li>
               <li><i class="fa-regular fa-circle-check"></i> HTML / CSS / Bootstrap</li>
               <li><i class="fa-regular fa-circle-check"></i> Java</li>
-              <li><i class="fa-regular fa-circle-check"></i> PostgreSQL / Supabase</li>
+              <li><i class="fa-regular fa-circle-check"></i> PostgreSQL / PostGIS / Supabase</li>
             </ul>
 
             <h6 class="fw-bold mt-3">Infraestructura y herramientas</h6>
             <ul class="skills-list">
               <li><i class="fa-regular fa-circle-check"></i> Microsoft Azure (máquinas virtuales)</li>
+              <li><i class="fa-regular fa-circle-check"></i> AWS Lambda</li>
+              <li><i class="fa-regular fa-circle-check"></i> GitHub Actions (CI/CD)</li>
               <li><i class="fa-regular fa-circle-check"></i> Git / GitHub</li>
             </ul>
           </section>
@@ -194,8 +199,59 @@
           <!-- Proyectos -->
           <section class="mb-5">
             <h4 class="fw-bold text-primary mb-4">
-              <i class="fas fa-diagram-project me-2"></i> Proyectos académicos
+              <i class="fas fa-diagram-project me-2"></i> Proyectos
             </h4>
+
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title fw-bold">
+                  Nexo IA – Analítica de IPS de Colombia
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
+                  2026
+                </h5>
+                <h6 class="text-primary">Proyecto personal</h6>
+                <ul class="my-4">
+                  <li>Asistente de inteligencia de negocios que responde en lenguaje natural sobre datos abiertos de MinSalud (41.427 registros de IPS en datos.gov.co); las cifras las calculan consultas SoQL, no el modelo, para evitar números inventados.</li>
+                  <li>Backend en FastAPI con enrutador de LLM (Groq, Gemini y OpenAI), RAG sobre documentos con Supabase y pgvector, frontend en React + Vite y pruebas con pytest.</li>
+                  <li>Código: <a href="https://github.com/LDking777/Stack_comp" target="_blank">github.com/LDking777/Stack_comp</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title fw-bold">
+                  Cavaltec – Autodiagnóstico de cumplimiento de la Ley 1581
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
+                  2026
+                </h5>
+                <h6 class="text-primary">Proyecto personal</h6>
+                <ul class="my-4">
+                  <li>API en FastAPI para evaluar el cumplimiento de la ley de protección de datos personales, con consultoría basada en RAG (embeddings de OpenAI y pgvector).</li>
+                  <li>Ingesta de documentos a la base vectorial y autenticación JWT con roles sobre Supabase.</li>
+                  <li>Código: <a href="https://github.com/LDking777/desplieguehacka2" target="_blank">github.com/LDking777/desplieguehacka2</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title fw-bold">
+                  Recomendador turístico de Manizales
+                </h4>
+                <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
+                  2026
+                </h5>
+                <h6 class="text-primary">Proyecto personal</h6>
+                <ul class="my-4">
+                  <li>API en FastAPI con búsquedas geoespaciales en PostgreSQL/PostGIS (radio y orden por distancia) y enriquecimiento de recomendaciones con IA (Groq).</li>
+                  <li>Pipeline CI/CD en GitHub Actions: pruebas con pytest, lint y build del frontend en React, y despliegue del backend en AWS Lambda por ambientes (desarrollo, QA y producción).</li>
+                  <li>Código: <a href="https://github.com/LDking777/mnz-places-advisor" target="_blank">github.com/LDking777/mnz-places-advisor</a></li>
+                </ul>
+              </div>
+            </div>
 
             <div class="card mb-3 border-0 shadow-sm">
               <div class="card-body">
@@ -205,7 +261,7 @@
                 <h5 class="card-subtitle mb-2 text-muted" style="font-size: 14px">
                   2025
                 </h5>
-                <h6 class="text-primary">Universidad de Caldas | Proyecto de curso</h6>
+                <h6 class="text-primary">Proyecto académico | Universidad de Caldas</h6>
                 <ul class="my-4">
                   <li>Implementé el backend con Node.js y PostgreSQL como base de datos relacional.</li>
                   <li>Desarrollé interfaces web responsivas con HTML5, CSS3 y Bootstrap.</li>
@@ -277,4 +333,4 @@
     <script src="scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-</html>
+</html>
