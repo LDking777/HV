@@ -108,7 +108,7 @@ i {
 @media print {
     @page {
         size: A4;
-        margin: 14mm 16mm;
+        margin: 12mm 15mm;
     }
 
     html, body {
@@ -293,6 +293,12 @@ i {
     #pdf-content .card ul.my-4 {
         margin: 2pt 0 0 !important;
         padding-left: 14pt;
+    }
+
+    /* Idiomas en una sola línea */
+    #pdf-content .col-md-8 .list-unstyled {
+        display: flex;
+        gap: 0 16pt;
     }
 
     #pdf-content .mb-4,
